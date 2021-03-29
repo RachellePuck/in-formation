@@ -2,7 +2,7 @@
   <div class="max-w-7xl mx-auto">
     <div class="flex justify-between items-center py-6 md:justify-start md:space-x-10  px-4 sm:px-6">
       <div class="flex justify-start lg:w-0 lg:flex-1">
-        <a href="#">
+        <a href="/">
           <span class="sr-only">Workflow</span>
           <img class="h-8 w-auto sm:h-10" src="{{URL('/images/favicon.ico')}}" alt="">
         </a>
@@ -17,13 +17,13 @@
         </button>
       </div>
       <nav class="hidden md:flex space-x-10 items-center justify-end md:flex-1 lg:w-0">  
-        <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+        <a href="{{route('schedule')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">
           Rooster
         </a>
-        <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+        <a href="{{route('colleagues')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">
           Collega's
         </a>
-        <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+        <a href="{{route('account')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">
           <div class="flex items-centered">
               Mijn account
           </div>
