@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TimetableController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/rooster', function () {
-    return view('schedule');
-})->name('schedule');
+Route::get('/', [TimetableController::class, 'home']);
+Route::get('rooster', [TimetableController::class, 'index'])->name('schedule');
 Route::get('/collegas', function () {
     return view('colleagues');
 })->name('colleagues');

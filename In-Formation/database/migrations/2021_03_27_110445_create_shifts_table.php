@@ -19,6 +19,7 @@ class CreateShiftsTable extends Migration
             $table->dateTime('end_time');
             $table->integer('employee_id');
             $table->string('department');
+            $table->timestamps();
         });
     }
 

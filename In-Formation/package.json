@@ -16,5 +16,9 @@
         "lodash": "^4.17.19",
         "postcss": "^8.2.8",
         "tailwindcss": "^2.0.4"
+    },
+    "dependencies": {
+        "jquery": "^3.6.0",
+        "tui-calendar": "^1.13.0"
     }
 }
