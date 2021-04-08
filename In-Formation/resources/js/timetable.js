@@ -47,5 +47,5 @@ shifts.forEach(element => {
 
 
 calendar.on('clickSchedule', function(e) {
-  window.location.href = (route('shift.trade', { shift: e.schedule.id }));
+  window.location.href = route('shift.trade', { shift: e.schedule.id });
 });
