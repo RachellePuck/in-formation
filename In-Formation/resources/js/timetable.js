@@ -11,33 +11,41 @@ var calendar = new Calendar('#calendar', {
   disableClick: true,
   scheduleView: ['time'],
   isReadOnly: true,
+  week: {
+    hourStart: 7,
+    hourEnd: 23,
+    startDayOfWeek: 1 // monday
+  },
+  theme: {
+    'week.timegridOneHour.height': '36px',
+    'week.timegridHalfHour.height': '18px',
+  },
   calendars: [
     {
-        id: '1',
-        name: 'My Calendar',
-        color: '#ffffff',
-        bgColor: '#9e5fff',
-        dragBgColor: '#9e5fff',
-        borderColor: '#9e5fff'
-      },
+      id: '1',
+      name: 'My Calendar',
+      color: '#ffffff',
+      bgColor: '#9e5fff',
+      dragBgColor: '#9e5fff',
+      borderColor: '#9e5fff'
+    },
   ]
 });
 
 shifts.forEach(element => {
-    calendar.createSchedules([
-        {
-            title: element.department,
-            calendarId: '1',
-            category: 'time',
-            start: element.start_time,
-            end: element.end_time,
-        },
-    ]);
+  calendar.createSchedules([
+    {
+      title: element.department,
+      calendarId: '1',
+      category: 'time',
+      id: element.id,
+      start: element.start_time,
+      end: element.end_time,
+    },
+  ]);
 });
 
 
-calendar.on({
-    'clickSchedule': function(e) {
-        console.log('clickSchedule', e);
-    },
+calendar.on('clickSchedule', function(e) {
+  window.location.href = (route('shift.trade', { shift: e.schedule.id }));
 });

@@ -1,5 +1,5 @@
 <div class="timetable">
-  <div id="calendar" style="height: 800px;"></div>
+  <div id="calendar"></div>
 </div>
 
 <script>var shifts = {!! json_encode($shifts ) !!}</script>

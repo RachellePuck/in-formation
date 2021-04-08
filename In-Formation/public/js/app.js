@@ -1906,6 +1906,16 @@ var calendar = new (tui_calendar__WEBPACK_IMPORTED_MODULE_1___default())('#calen
   disableClick: true,
   scheduleView: ['time'],
   isReadOnly: true,
+  week: {
+    hourStart: 7,
+    hourEnd: 23,
+    startDayOfWeek: 1 // monday
+
+  },
+  theme: {
+    'week.timegridOneHour.height': '36px',
+    'week.timegridHalfHour.height': '18px'
+  },
   calendars: [{
     id: '1',
     name: 'My Calendar',
@@ -1920,14 +1930,15 @@ shifts.forEach(function (element) {
     title: element.department,
     calendarId: '1',
     category: 'time',
+    id: element.id,
     start: element.start_time,
     end: element.end_time
   }]);
 });
-calendar.on({
-  'clickSchedule': function clickSchedule(e) {
-    console.log('clickSchedule', e);
-  }
+calendar.on('clickSchedule', function (e) {
+  window.location.href = route('shift.trade', {
+    shift: e.schedule.id
+  });
 });
 
 /***/ }),
