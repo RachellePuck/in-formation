@@ -21,4 +21,9 @@ class Employee extends Model
     public function shifts() {
         return $this->hasMany(Shift::class);
     }
+
+    public function getFullNameAttribute() {
+        $full_name = $this->first_name . " " . $this->last_name;
+        return $full_name;
+    }
 }

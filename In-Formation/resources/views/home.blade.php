@@ -8,4 +8,5 @@
       <button class="bg-blue-600 py-2 px-8 my-4 rounded-lg text-white flex mx-auto">Klik hier!</button>
     </div>
   </div>
+  @include('layouts.timetable')
 @endsection

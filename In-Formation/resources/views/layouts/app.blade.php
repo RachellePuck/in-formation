@@ -8,6 +8,7 @@
   <title>In-Formation</title>
 </head>
 <body>
+  @routes
   @include('layouts.navbar')
   @yield('content')
 </body>

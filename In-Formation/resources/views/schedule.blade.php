@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <p>Rooster</p>
+    @include('layouts.timetable')
 @endsection
