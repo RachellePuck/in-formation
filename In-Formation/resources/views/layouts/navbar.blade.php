@@ -16,19 +16,29 @@
           </svg>
         </button>
       </div>
-      <nav class="hidden md:flex space-x-10 items-center justify-end md:flex-1 lg:w-0">  
-        <a href="{{route('schedule')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">
-          Rooster
-        </a>
-        <a href="{{route('colleagues')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">
-          Collega's
-        </a>
-        <a href="{{route('account')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">
-          <div class="flex items-centered">
-              Mijn account
-          </div>
-        </a>
-      </nav>
+      @auth
+        <nav class="hidden md:flex space-x-10 items-center justify-end md:flex-1 lg:w-0">  
+          <a href="{{route('schedule')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">
+            Rooster
+          </a>
+          <a href="{{route('colleagues')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">
+            Collega's
+          </a>
+          <a href="{{route('account')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">
+            <div class="flex items-centered">
+                Mijn account
+            </div>
+          </a>
+          <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="text-base font-medium text-gray-500 hover:text-gray-900">
+            <div class="flex items-centered">
+              Log out
+            </div>
+          </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST">
+              @csrf
+          </form>
+        </nav>
+      @endauth
     </div>
   </div>
 </div>
