@@ -20,6 +20,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',
+        'role',
     ];
 
     /**
@@ -40,4 +42,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    const ROLE = [
+        1 => 'employee',
+        2 => 'manager',
+        3 => 'admin',
+    ];
+
+    
+    public function shifts() {
+        return $this->hasMany(Shift::class);
+    }
 }
