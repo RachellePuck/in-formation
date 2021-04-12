@@ -28,6 +28,14 @@
               Mijn account
           </div>
         </a>
+        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="text-base font-medium text-gray-500 hover:text-gray-900">
+          <div class="flex items-centered">
+            Log out
+          </div>
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+            @csrf
+        </form>
       </nav>
     </div>
   </div>
