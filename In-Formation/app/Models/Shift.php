@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Employee;
+use App\Models\User;
 
 
 class Shift extends Model
@@ -19,6 +19,6 @@ class Shift extends Model
     ];
 
     public function employee() {
-        return $this->hasOne(Employee::class, 'employee_id');
+        return $this->hasOne(User::class, 'employee_id');
     }
 }

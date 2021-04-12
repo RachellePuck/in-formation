@@ -9,7 +9,9 @@ class TradeRequest extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'shift_id', 'employee_id', 'status'
+        'shift_id',
+        'employee_id',
+        'status',
     ];
 
     const STATUS = [
@@ -23,6 +25,6 @@ class TradeRequest extends Model
     }
 
     public function employee() {
-        return $this->belongsTo(Employee::class);
+        return $this->belongsTo(User::class);
     }
 }
