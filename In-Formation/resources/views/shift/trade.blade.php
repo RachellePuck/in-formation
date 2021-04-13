@@ -15,7 +15,7 @@
         <div>
             <a href="{{ route('shift.trade.request', [$shift, $employee]) }}">
                 <div class="p-6 max-w-sm mx-auto my-8 bg-white rounded-xl shadow-md flex items-center space-x-4">
-                    {{ $employee->first_name . " " . $employee->last_name }}
+                    {{ $employee->name }}
                 </div>        
             </a>
         </div>

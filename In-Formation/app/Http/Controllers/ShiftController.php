@@ -6,11 +6,12 @@ use App\Models\Shift;
 use App\Models\TradeRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ShiftController extends Controller
 {
     public function trade(Shift $shift) {
-        $employees = User::where('role', 1);
+        $employees = User::all()->where('role', 1)->except(Auth::id());
         return view('shift.trade', compact('employees', 'shift'));
     }
 

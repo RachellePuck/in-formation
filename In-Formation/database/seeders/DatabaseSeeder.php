@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Shift;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,6 +16,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        Shift::factory(5)->create();
+
+        foreach(User::all() as $user) {
+            Shift::factory(5)->create([
+                'employee_id' => $user->id,
+            ]);
+        }
     }
 }

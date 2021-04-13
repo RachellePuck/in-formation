@@ -30,7 +30,6 @@ class ShiftFactory extends Factory
             'start_time' => $start_time,
             'end_time' => $end_time,
             'department' => $this->faker->randomElement(['Kassa', 'Brood', 'Winkel']),
-            'employee_id' => 1,
         ];
     }
 }

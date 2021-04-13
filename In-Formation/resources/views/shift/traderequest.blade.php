@@ -13,7 +13,7 @@
     <p class="p-6 mx-auto text-4xl text-center">door:</p>
     <div class="p-6 max-w-sm mx-auto my-8 bg-white rounded-xl shadow-md flex items-center space-x-4">
         <div>
-            <div class="text-xl font-medium text-black">{{ $tradeRequest->employee->full_name }}</div>
+            <div class="text-xl font-medium text-black">{{ $tradeRequest->employee->name }}</div>
         </div>
     </div>
     <p class="p-6 mx-auto text-4xl text-center">is verzonden!</p>
